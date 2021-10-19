@@ -10,12 +10,17 @@ public class MoveCar : MonoBehaviour
     float vertical;
 
     public float runSpeed = 10.0f;
+    public GameHandler gameHandlerObj;
 
 
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        if (GameObject.FindWithTag("GameHandler") != null){
+               gameHandlerObj = GameObject.FindWithTag("GameHandler")
+               .GetComponent<GameHandler>();
+        }
     }
 
     // Update is called once per frame
@@ -29,11 +34,15 @@ public class MoveCar : MonoBehaviour
     {
         body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Passenger"))
+        if(other.gameObject.tag == "Passenger")
         {
             other.gameObject.SetActive(false);
+            gameHandlerObj.AddScore(1);
+            other.gameObject.transform.position 
+            = new Vector2(Random.Range(-6, 3), Random.Range(-4, 4));
+            other.gameObject.SetActive(true);
         }
     }
 }
