@@ -434,7 +434,7 @@ GameObject:
   - component: {fileID: 534221924}
   m_Layer: 0
   m_Name: taxi (3)
-  m_TagString: Untagged
+  m_TagString: taxi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -694,7 +694,7 @@ GameObject:
   - component: {fileID: 619910944}
   m_Layer: 0
   m_Name: taxi (2)
-  m_TagString: Untagged
+  m_TagString: taxi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1367,7 +1367,7 @@ GameObject:
   - component: {fileID: 895682689}
   m_Layer: 0
   m_Name: taxi
-  m_TagString: Untagged
+  m_TagString: taxi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

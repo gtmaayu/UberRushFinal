@@ -10,6 +10,7 @@ TagManager:
   - BPassenger
   - RHouse
   - BHouse
+  - taxi
   layers:
   - Default
   - TransparentFX

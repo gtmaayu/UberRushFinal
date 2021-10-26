@@ -68,6 +68,10 @@ public class MoveCar : MonoBehaviour
             = new Vector2(Random.Range(-6, 3), Random.Range(-4, 4));
             bPassenger.SetActive(true);
         }
+        if(tag == "taxi") {
+            Destroy(other.gameObject);
+            gameHandlerObj.AddScore(-3);
+        }
     }
 }
 //using System.Collections;
