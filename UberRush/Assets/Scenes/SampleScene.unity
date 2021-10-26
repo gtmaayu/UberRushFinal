@@ -562,7 +562,7 @@ GameObject:
   - component: {fileID: 549871943}
   m_Layer: 0
   m_Name: rPassenger
-  m_TagString: RPassenger
+  m_TagString: BPassenger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1820,7 +1820,7 @@ GameObject:
   - component: {fileID: 1378298190}
   m_Layer: 0
   m_Name: bluePassenger
-  m_TagString: BPassenger
+  m_TagString: RPassenger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
