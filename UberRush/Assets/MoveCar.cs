@@ -11,6 +11,10 @@ public class MoveCar : MonoBehaviour
 
     public float runSpeed = 10.0f;
     public GameHandler gameHandlerObj;
+    public GameObject rPassenger;
+    public GameObject bPassenger;
+    public bool hasRPassenger;
+    public bool hasBPassenger;
 
 
     // Start is called before the first frame update
@@ -21,6 +25,11 @@ public class MoveCar : MonoBehaviour
                gameHandlerObj = GameObject.FindWithTag("GameHandler")
                .GetComponent<GameHandler>();
         }
+        
+        rPassenger = GameObject.FindWithTag("RPassenger");
+        bPassenger = GameObject.FindWithTag("BPassenger");
+        hasBPassenger = false;
+        hasRPassenger = false;
     }
 
     // Update is called once per frame
@@ -36,13 +45,28 @@ public class MoveCar : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.tag == "Passenger")
-        {
-            other.gameObject.SetActive(false);
+        string tag = other.gameObject.tag;
+        if(tag == "RPassenger") {
+            rPassenger.SetActive(false);
+            hasRPassenger = true;
+        }
+        if(tag == "BPassenger") {
+            bPassenger.SetActive(false);
+            hasBPassenger = true;
+        }
+        if(tag == "RHouse" && hasRPassenger == true) {
+            hasRPassenger = false;
             gameHandlerObj.AddScore(1);
-            other.gameObject.transform.position 
+            rPassenger.transform.position 
             = new Vector2(Random.Range(-6, 3), Random.Range(-4, 4));
-            other.gameObject.SetActive(true);
+            rPassenger.SetActive(true);
+        }
+        if(tag == "BHouse" && hasBPassenger == true) {
+            hasBPassenger = false;
+            gameHandlerObj.AddScore(1);
+            bPassenger.transform.position 
+            = new Vector2(Random.Range(-6, 3), Random.Range(-4, 4));
+            bPassenger.SetActive(true);
         }
     }
 }

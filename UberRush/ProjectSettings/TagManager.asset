@@ -6,6 +6,10 @@ TagManager:
   tags:
   - GameHandler
   - Passenger
+  - RPassenger
+  - BPassenger
+  - RHouse
+  - BHouse
   layers:
   - Default
   - TransparentFX
